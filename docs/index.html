@@ -2,17 +2,9 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>情報基礎1 最終課題</title>
+		<link rel='stylesheet' href='css/style.css'>
 
-		<script type="module">
-				async function wasm(){
-						const { instance } = await WebAssembly.instantiateStreaming(
-								fetch("wasm/main.wasm")
-						);
-						alert(instance.exports.add(1,5));
-				}
-				wasm();
-		</script>
+		<title>情報基礎1 最終課題</title>
 	</head>
 	<body>
 		<h1>情報基礎1 最終課題</h1>
@@ -20,6 +12,7 @@
 			<h2>JavaScriptが無効になっています．XSSとか無いので有効にして下さい．なんでもしますから(なんでもするとは言っていない)．</h2>
 		</noscript>
 
+		<div class="lain">serial experiments lain</div>
 		<a href="./test.html">WebAssemblyのテスト</a>
 	</body>
 </html>
