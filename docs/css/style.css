@@ -1,0 +1,10 @@
+@font-face {
+	/* LoveLetterTypeWriter font
+	from: http://www.konaka.com/alice6/lain/resources.html */
+	font-family: 'LoveLetterTypeWriter';
+	src: url('../font/LoveLetter.TTF') format("truetype");
+}
+
+.lain {
+	font-family: "LoveLetterTypeWriter";
+}

@@ -1,3 +1,5 @@
-__attribute__((visibility("default"))) int add(int a, int b){
+#include "wasm.h"
+
+EXPORT int add(int a, int b){
 		return a+b;
 }
