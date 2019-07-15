@@ -3,7 +3,7 @@
 if(!('WebAssembly' in window)){
 	alert("このブラウザではWebAssemblyがサポートされていません．");
 }else{
-	//alert("このブラウザではWebAssemblyがサポートされています．");
+	console.log("[ok] this web browser supports Webassembly");
 }
 
 // wasmをロードする関数
@@ -32,10 +32,11 @@ function load_wasm(filename, imports){
 		});
 }
 
+// とりあえずmain.wasmをロードしておく
 load_wasm('wasm/main.wasm')
 	.then(instance => {
 		var exports = instance.exports;
-		alert(exports.add(1,3));
+		console.log(exports.add(1,3));
 	});
 
 /*
