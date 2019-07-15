@@ -3,12 +3,16 @@
 	<head>
 		<meta charset="utf-8">
 		<title>N体計算</title>
-		
+
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/wasm.js"></script>
 	</head>
 	<body>
-		<h1>WebAssemblyでN体計算</h1>
+		<h1 class="lain">WebAssemblyでN体計算</h1>
 
-		<canvas id="canvas" width="640" height="480"></canvas>
+		<canvas id="canvas" width="640" height="480">描画領域</canvas>
+
+		<input type="button" value="start" onclick="on_start();"/>
 
 		<script type="text/javascript" src="js/nbody.js"></script>
 	</body>
