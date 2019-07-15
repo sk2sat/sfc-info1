@@ -3,7 +3,7 @@
 if(!('WebAssembly' in window)){
 	alert("このブラウザではWebAssemblyがサポートされていません．");
 }else{
-	console.log("[ok] this web browser supports Webassembly");
+	console.log("[ok] Webassembly support");
 }
 
 // wasmをロードする関数
@@ -14,6 +14,7 @@ function load_wasm(filename, imports){
 		.then(module => {
 			imports = imports || {};
 			imports.env = imports.env || {};
+			imports.env.print = arg => console.log(arg);
 			imports.env.memoryBase = imports.env.memoryBase || 0;
 			imports.env.tableBase  = imports.env.tableBase || 0;
 			if(!imports.env.memory){

@@ -1,4 +1,4 @@
-TARGET	= test.wasm
+TARGET	= nbody.wasm test.wasm
 #SRCS	= test.c
 #OBJS	= $(SRCS:.c=.o)
 
@@ -8,7 +8,7 @@ LD	:= wasm-ld
 
 CFLAGS	= --target=wasm32
 CXXFLAGS= --target=wasm32
-LDFLAGS	= --no-entry --export-all
+LDFLAGS	= --no-entry --export-all --allow-undefined
 
 %.o:%.c
 	$(CC) -o $@ -c $(CFLAGS) $<
