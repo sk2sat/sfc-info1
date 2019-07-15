@@ -25,9 +25,11 @@ function draw_circle(x, y, r){
 }
 
 function draw(){
-	fill_back();
 	wasm.exports.update();
-	draw_circle(wasm.exports.get_x(0), wasm.exports.get_y(0), 10);
+	fill_back();
+	for(var i=0;i<wasm.exports.get_num();i++){
+		draw_circle(wasm.exports.get_x(i), wasm.exports.get_y(i), 10);
+	}
 }
 
 // 関数をimportできるようにここでwasmを読み込む
@@ -47,8 +49,14 @@ load_wasm("wasm/nbody.wasm")
 // イベントハンドラ
 function on_start(){
 	wasm.exports.add_particle(1, 1);
+	wasm.exports.add_particle(20, 20);
 	setInterval(draw, 1);
 }
 
+function on_add(){
+	var x = Math.round(Math.random()*canvas.width);
+	var y = Math.round(Math.random()*canvas.height);
+	wasm.exports.add_particle(x, y);
+}
+
 fill_back(); // とりあえず塗りつぶしておく
-draw_circle(100, 100, 50);

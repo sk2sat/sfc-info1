@@ -10,6 +10,10 @@ double Vel[MAX_PARTICLE*2];
 
 int num_particle = 0;
 
+EXPORT int get_num(){
+	return num_particle;
+}
+
 EXPORT int get_x(int n){
 	return (int)Pos[n*2];
 }
