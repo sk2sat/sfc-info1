@@ -24,6 +24,12 @@ function draw_circle(x, y, r){
 	context.fill();
 }
 
+function draw(){
+	fill_back();
+	wasm.exports.update();
+	draw_circle(wasm.exports.get_x(0), wasm.exports.get_y(0), 10);
+}
+
 // 関数をimportできるようにここでwasmを読み込む
 const objs = {
 	imports: {
@@ -40,7 +46,8 @@ load_wasm("wasm/nbody.wasm")
 
 // イベントハンドラ
 function on_start(){
-	console.log(wasm.exports.add(100,4));
+	wasm.exports.add_particle(1, 1);
+	setInterval(draw, 1);
 }
 
 fill_back(); // とりあえず塗りつぶしておく
