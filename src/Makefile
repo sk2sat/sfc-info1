@@ -1,6 +1,6 @@
-TARGET	= main.wasm
-SRCS	= test.c
-OBJS	= $(SRCS:.c=.o)
+TARGET	= test.wasm
+#SRCS	= test.c
+#OBJS	= $(SRCS:.c=.o)
 
 CC	:= clang
 CXX	:= clang++
@@ -16,13 +16,12 @@ LDFLAGS	= --no-entry --export-all
 %.o:%.cc
 	$(CXX) -o $@ -c $(CFLAGS) $<
 
+%.wasm:%.o
+	$(LD) -o $@ $(LDFLAGS) $^
+
 # command
 default:
 	make $(TARGET)
 
 clean:
-	rm -f $(TARGET)
-	rm -f *.o
-
-$(TARGET): $(OBJS)
-	$(LD) -o $@ $(LDFLAGS) $^
+	rm -f *.wasm *.o
