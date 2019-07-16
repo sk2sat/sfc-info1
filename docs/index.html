@@ -6,6 +6,16 @@
 
 		<link rel="stylesheet" href="css/style.css">
 		<script type="text/javascript" src="js/wasm.js"></script>
+		<script type="text/javascript">
+			var i=0;
+			var lain_txt = ["lain", "玲音", "れいん"];
+			function lets_all_love_lain(){
+				var lain=lain_txt[i%3];
+				console.log(lain + "を好きになりましょう");
+				i++;
+			}
+			setInterval(lets_all_love_lain, 100);
+		</script>
 	</head>
 	<body>
 		<h1>情報基礎1 最終課題</h1>
@@ -14,6 +24,18 @@
 		</noscript>
 
 		<div class="lain">serial experiments lain</div>
+		<br>
+		<p class="lain">
+			このページは<a href="https://pages.github.com">GitHub Pages</a>でホストされています．
+		</p>
+		<p class="lain">
+			また，このページのソースコードは
+			<a href="https://github.com/sk2sat/sfc-info1">GitHub</a>
+			で公開しています．ライセンスは
+			<a href="https://opensource.org/licenses/MIT">MITライセンス</a>
+			です．
+		</p>
+		<br>
 		<a href="./test.html">WebAssemblyのテスト</a>
 		<br>
 		<a href="./nbody.html">WebAssemblyでN体計算</a>
