@@ -29,6 +29,7 @@ function load_wasm(filename, imports){
 					element: 'anyfunc'
 				});
 			}
+			console.log("memo: Chromeだと'WebAssembly.Instance is disallowed on the main thread'って出てかなしい．firefoxでは出ないのであっハイ");
 			return new WebAssembly.Instance(module, imports);
 		});
 }
